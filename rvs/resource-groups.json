@@ -1,0 +1,9 @@
+{
+  "prod": [],
+  "research": [
+    "research.package_segmentation.firstpage.first_page_classifier_resource.FirstPageClassifierResource",
+    "research.doc_embedding.yolo.yolo_dla_resource.YoloDLAResource",
+    "research.package_segmentation.cidc_classification.cidc_resource.CompleteDocumentClassifierResource"
+  ],
+  "test": []
+}

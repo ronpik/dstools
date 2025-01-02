@@ -1,0 +1,32 @@
+{
+  "resources_root": "/Users/ronp/.dono/resources/stopwords/2.0",
+  "storage": {
+    "remote_storage_type": "GCS",
+    "storage_config": {
+        "bucket": "my-google-bucket",
+        "credentials_path": "secrets/firebase_service-dev.json"
+      }
+  },
+  "other_storage_examples": [
+    {
+      "remote_storage_type": "S3",
+      "storage_config": {
+        "bucket": "my-bucket",
+        "region": "us-east-1",
+        "credentials": {
+          "access_key": "my-access-key",
+          "secret_key": "my-secret-key"
+        }
+      }
+    },
+    {
+      "remote_storage_type": "ssh",
+      "storage_config": {
+        "host": "remote-server.com",
+        "port": 22,
+        "user": "ssh-user",
+        "password": "ssh-password"
+      }
+    }
+  ]
+}
