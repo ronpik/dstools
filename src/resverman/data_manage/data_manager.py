@@ -2,14 +2,14 @@ from typing import Sequence, Iterable, TypeVar, Any, Optional
 
 from google.cloud import firestore
 from google.cloud.firestore_v1.async_stream_generator import AsyncStreamGenerator
+from globalog import LOG
 
-from research.common.async_iter_utils import async_chunked
-from research.data_manage.collections import RawPageCollectionWithContent
-from research.data_manage.firestore import FirestoreCollectionClient
-from research.data_manage.collections.firestore_collection import GeneralAsyncFirestoreCollection
-from research.data_manage.schema import RawPageRecord, RawPageMetadataRecord, EnrichedPageRecord, DataDBRecord
-from research.logs.logger import LOG
-from research.storage.handlers.async_handler import AsyncStorageHandler
+from resverman.common.async_iter_utils import async_chunked
+from resverman.data_manage.collections import RawPageCollectionWithContent
+from resverman.data_manage.firestore import FirestoreCollectionClient
+from resverman.data_manage.collections.firestore_collection import GeneralAsyncFirestoreCollection
+from resverman.data_manage.schema import RawPageRecord, RawPageMetadataRecord, EnrichedPageRecord, DataDBRecord
+from resverman.storage.handlers.async_handler import AsyncStorageHandler
 
 
 _T = TypeVar('_T', bound=DataDBRecord)

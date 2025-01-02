@@ -4,12 +4,10 @@ from typing import Any, Optional
 
 import numpy as np
 from PIL.Image import Image
+from jserpy.json_typing import JSON
+from jserpy import serialize_json_as_dict, deserialize_json
 from typing_extensions import Self
 
-from app.common.ext.typing_ext import JSON
-from app.schemas.ocr import ProcessedOCRData
-from app.schemas.results.layout import LayoutResult
-from research.common.json_tools.json_handler import serialize_json_as_dict, deserialize_json
 
 
 class LocationType(Enum):
@@ -75,8 +73,6 @@ class EnrichedPageRecord(DataDBRecord):
     page_hash: Optional[str] = None
     yolo_v10_dla_e: Optional[np.ndarray] = None
     fp_prob: Optional[float] = None
-    gv_ocr: Optional[ProcessedOCRData] = None
-    reducto: Optional[LayoutResult] = None
 
     def to_json(self) -> dict[str, JSON]:
         dict_record = super().to_json()

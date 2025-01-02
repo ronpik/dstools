@@ -1,9 +1,9 @@
 from typing import List, Iterable, Sequence, Iterator, Callable, Optional, Type, TypeVar
 import asyncio
 
-from research.data_manage.collections import AsyncDBCollection
-from research.data_manage.firestore import FirestoreCollectionClient
-from research.data_manage.schema import DataDBRecord
+from resverman.data_manage.collections import AsyncDBCollection
+from resverman.data_manage.firestore import FirestoreCollectionClient
+from resverman.data_manage.schema import DataDBRecord
 
 
 _T = TypeVar('_T', bound=DataDBRecord)

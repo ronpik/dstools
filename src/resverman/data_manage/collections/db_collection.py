@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Generic, TypeVar, Iterator, Sequence, List, Optional, Iterable, Callable
 
-from app.common.collection.iter_utils import take_first_iter
-from research.data_manage.schema import DataDBRecord
+from resverman.common.iter_utils import take_first_iter
+from resverman.data_manage.schema import DataDBRecord
 
 
 _T = TypeVar('_T', bound=DataDBRecord)

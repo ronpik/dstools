@@ -3,8 +3,9 @@ from google.api_core.exceptions import DeadlineExceeded
 from google.cloud import firestore
 from typing import Optional, Any, Sequence, TypedDict, Iterable
 
-from research.common.iter_utils import chunked
-from research.logs.logger import LOG
+from globalog import LOG
+
+from resverman.common.iter_utils import chunked
 
 MAX_BATCH_SIZE = 500    # Firestore batch can handle up to 500 writes
 
