@@ -2,11 +2,11 @@ from abc import ABCMeta, ABC
 from pathlib import Path
 from typing import Optional
 
-from resverman.compression.folder_compress import FolderCompressor
-from resverman.compression.snappy_compressor import SnappyCompressor
-from resverman.resource_management.resource_storage.resource_downloader import ResourceDownloader
-from resverman.resource_management.resource_storage.resource_uploader import ResourceUploader
-from resverman.resource_management.resource_config import ResourceConfig
+from dstools.compression.folder_compress import FolderCompressor
+from dstools.compression.snappy_compressor import SnappyCompressor
+from dstools.resource_management.resource_storage.resource_downloader import ResourceDownloader
+from dstools.resource_management.resource_storage.resource_uploader import ResourceUploader
+from dstools.resource_management.resource_config import ResourceConfig
 
 
 _CONFIG = ResourceConfig.default()

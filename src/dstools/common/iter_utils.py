@@ -5,7 +5,7 @@ from itertools import zip_longest, tee, chain, islice
 from operator import itemgetter
 from typing import TypeVar, List, Iterable, Optional, Callable, Sequence, Generator, Container, Tuple, Iterator, Any
 
-from resverman.common.ext.typing_ext import Comparable
+from dstools.common.ext.typing_ext import Comparable
 
 
 _T = TypeVar('_T')

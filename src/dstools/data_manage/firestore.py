@@ -5,7 +5,7 @@ from typing import Optional, Any, Sequence, TypedDict, Iterable
 
 from globalog import LOG
 
-from resverman.common.iter_utils import chunked
+from dstools.common.iter_utils import chunked
 
 MAX_BATCH_SIZE = 500    # Firestore batch can handle up to 500 writes
 

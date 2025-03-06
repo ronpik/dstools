@@ -1,4 +1,4 @@
-from resverman.storage.handlers.storage_handler import StorageHandler
+from dstools.storage.handlers.storage_handler import StorageHandler
 
 class SSHStorageHandler(StorageHandler):
     def __init__(self, credentials: dict):

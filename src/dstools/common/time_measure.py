@@ -3,7 +3,7 @@ from typing import Optional
 from contextlib import ContextDecorator
 from enum import Enum
 
-from resverman.common.dummy_logger import PrintLogger, DummyLoggerLevel
+from dstools.common.dummy_logger import PrintLogger, DummyLoggerLevel
 
 
 try:
@@ -14,7 +14,7 @@ except ImportError:
     LoggerLevel = DummyLoggerLevel
     _use_globalog = False
 
-from resverman.common.ext.typing_ext import LoggerType
+from dstools.common.ext.typing_ext import LoggerType
 
 
 class TimeUnit(Enum):

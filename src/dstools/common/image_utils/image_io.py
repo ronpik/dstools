@@ -6,8 +6,8 @@ import PIL
 from PIL.Image import Image
 from globalog import LOG
 
-from resverman.common.io_utils import write_bytes
-from resverman.common.aio_utils import write_bytes as awrite_bytes
+from dstools.common.io_utils import write_bytes
+from dstools.common.aio_utils import write_bytes as awrite_bytes
 
 ImageFormat = {'png', 'tif', 'tiff', 'jpg', 'jpeg'}
 

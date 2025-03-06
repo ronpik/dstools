@@ -3,12 +3,12 @@ from typing import Iterable, Sequence, Optional
 
 from PIL.Image import Image
 
-from resverman.common.image_utils.image_io import image_from_bytes, image_to_bytes_async
-from resverman.data_manage.collections import AsyncDBCollectionWithContent, AsyncDBCollection, \
+from dstools.common.image_utils.image_io import image_from_bytes, image_to_bytes_async
+from dstools.data_manage.collections import AsyncDBCollectionWithContent, AsyncDBCollection, \
     GeneralAsyncFirestoreCollection
-from resverman.data_manage.firestore import FirestoreCollectionClient
-from resverman.data_manage.schema import RawPageMetadataRecord, RawPageRecord, LocationType
-from resverman.storage.handlers.async_handler import AsyncStorageHandler
+from dstools.data_manage.firestore import FirestoreCollectionClient
+from dstools.data_manage.schema import RawPageMetadataRecord, RawPageRecord, LocationType
+from dstools.storage.handlers.async_handler import AsyncStorageHandler
 
 
 class RawPageCollectionWithContent(AsyncDBCollectionWithContent[RawPageMetadataRecord, RawPageRecord]):

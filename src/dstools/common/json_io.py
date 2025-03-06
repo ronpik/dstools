@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import Iterable, Iterator
 
-from resverman.common.ext.typing_ext import JSON
-from resverman.common.io_utils import write_lines, read_lines
+from dstools.common.ext.typing_ext import JSON
+from dstools.common.io_utils import write_lines, read_lines
 
 
 def write_json(data:JSON, path: str):

@@ -5,9 +5,9 @@ from google.cloud import storage
 from google.cloud.storage import Blob
 from globalog import LOG
 
-from resverman.dataset.defaults.default_data_manager import get_gcs_config
+from dstools.dataset.defaults.default_data_manager import get_gcs_config
 
-from resverman.storage.handlers.storage_handler import StorageHandler
+from dstools.storage.handlers.storage_handler import StorageHandler
 
 
 def get_src_root() -> Path:

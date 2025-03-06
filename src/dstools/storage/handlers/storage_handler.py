@@ -18,16 +18,16 @@ class StorageHandlerFactory:
     def get_handler(storage_type: str, storage_config: dict) -> StorageHandler:
         storage_type = storage_type.upper()
         if storage_type == "S3":
-            from resverman.storage.handlers.s3_handler import S3StorageHandler
+            from dstools.storage.handlers.s3_handler import S3StorageHandler
             return S3StorageHandler(storage_config)
         elif storage_type == "GCS":
-            from resverman.storage.handlers.gcs_handler import GCSHandler
+            from dstools.storage.handlers.gcs_handler import GCSHandler
             return GCSHandler(storage_config)
         elif storage_type == "SSH":
-            from resverman.storage.handlers.ssh_handler import SSHStorageHandler
+            from dstools.storage.handlers.ssh_handler import SSHStorageHandler
             return SSHStorageHandler(storage_config)
         elif storage_type == "LOCAL":
-            from resverman.storage.handlers.local_handler import LocalStorageHandler
+            from dstools.storage.handlers.local_handler import LocalStorageHandler
             return LocalStorageHandler(storage_config['root_dir'])
 
         else:

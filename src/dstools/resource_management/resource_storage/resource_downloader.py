@@ -1,5 +1,5 @@
 
-from resverman.storage.handlers.storage_handler import StorageHandlerFactory
+from dstools.storage.handlers.storage_handler import StorageHandlerFactory
 
 
 class ResourceDownloader:

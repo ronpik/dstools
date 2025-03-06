@@ -1,7 +1,7 @@
 from PIL import Image
 import io
 
-from resverman.storage.handlers.async_handler import AsyncStorageHandler
+from dstools.storage.handlers.async_handler import AsyncStorageHandler
 
 
 class AsyncGCSClient:

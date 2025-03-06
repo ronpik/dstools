@@ -4,12 +4,12 @@ from google.cloud import firestore
 from google.cloud.firestore_v1.async_stream_generator import AsyncStreamGenerator
 from globalog import LOG
 
-from resverman.common.async_iter_utils import async_chunked
-from resverman.data_manage.collections import RawPageCollectionWithContent
-from resverman.data_manage.firestore import FirestoreCollectionClient
-from resverman.data_manage.collections.firestore_collection import GeneralAsyncFirestoreCollection
-from resverman.data_manage.schema import RawPageRecord, RawPageMetadataRecord, EnrichedPageRecord, DataDBRecord
-from resverman.storage.handlers.async_handler import AsyncStorageHandler
+from dstools.common.async_iter_utils import async_chunked
+from dstools.data_manage.collections import RawPageCollectionWithContent
+from dstools.data_manage.firestore import FirestoreCollectionClient
+from dstools.data_manage.collections.firestore_collection import GeneralAsyncFirestoreCollection
+from dstools.data_manage.schema import RawPageRecord, RawPageMetadataRecord, EnrichedPageRecord, DataDBRecord
+from dstools.storage.handlers.async_handler import AsyncStorageHandler
 
 
 _T = TypeVar('_T', bound=DataDBRecord)

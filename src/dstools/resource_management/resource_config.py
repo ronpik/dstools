@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-from resverman.common.json_io import read_json
+from dstools.common.json_io import read_json
 
 
 def get_src_root() -> Path:

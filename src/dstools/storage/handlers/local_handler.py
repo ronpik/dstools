@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from resverman.common.io_utils import read_bytes, write_bytes
-from resverman.storage.handlers.storage_handler import StorageHandler
+from dstools.common.io_utils import read_bytes, write_bytes
+from dstools.storage.handlers.storage_handler import StorageHandler
 
 
 class LocalStorageHandler(StorageHandler):

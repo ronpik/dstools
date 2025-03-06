@@ -1,6 +1,6 @@
 import asyncio
 
-from resverman.storage.handlers.storage_handler import StorageHandler, StorageHandlerFactory
+from dstools.storage.handlers.storage_handler import StorageHandler, StorageHandlerFactory
 
 
 class AsyncStorageHandler:

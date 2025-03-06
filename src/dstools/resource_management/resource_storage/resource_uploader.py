@@ -1,6 +1,6 @@
 from globalog import LOG
 
-from resverman.storage.handlers.storage_handler import StorageHandlerFactory
+from dstools.storage.handlers.storage_handler import StorageHandlerFactory
 
 class ResourceUploader:
     def __init__(self, storage_type: str, storage_config: dict):
