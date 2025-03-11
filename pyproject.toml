@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dstools"
+description = "Data Science Toolbox"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "DSTools Team"}
+]
+dependencies = [
+    "globalog>=0.1.0",
+    "google-cloud-core>=2.4.1",
+    "google-cloud-storage>=2.18.2",
+    "aiofiles>=24.1.0",
+    "Pillow>=11.1.0",
+    "opencv-python>=4.10.0.84",
+    "google-cloud-firestore>=2.19.0",
+]
+
+[project.urls]
+Repository = "https://github.com/username/dstools"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

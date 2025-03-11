@@ -5,7 +5,6 @@ from google.cloud import storage
 from google.cloud.storage import Blob
 from globalog import LOG
 
-from dstools.dataset.defaults.default_data_manager import get_gcs_config
 
 from dstools.storage.handlers.storage_handler import StorageHandler
 
