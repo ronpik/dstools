@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dstools"
+name = "python-dstools"
 description = "Data Science Toolbox"
 version = "0.1.0"
 readme = "README.md"
