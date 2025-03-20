@@ -3,8 +3,7 @@ from pathlib import Path
 import tarfile
 import io
 
-from research.compression.compressor import Compressor
-
+from dstools.compression.compressor import Compressor
 
 _TarCompressionMode = Literal['gz', 'bz2', 'xz']
 

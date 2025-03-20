@@ -1,6 +1,6 @@
 import snappy
 
-from research.compression.compressor import Compressor
+from dstools.compression.compressor import Compressor
 
 
 class SnappyCompressor(Compressor):

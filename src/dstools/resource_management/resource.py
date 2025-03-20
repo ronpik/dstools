@@ -1,15 +1,30 @@
+import inspect
 from abc import ABCMeta, ABC
 from pathlib import Path
 from typing import Optional
+
+from globalog import LOG
 
 from dstools.compression.folder_compress import FolderCompressor
 from dstools.compression.snappy_compressor import SnappyCompressor
 from dstools.resource_management.resource_storage.resource_downloader import ResourceDownloader
 from dstools.resource_management.resource_storage.resource_uploader import ResourceUploader
 from dstools.resource_management.resource_config import ResourceConfig
+from dstools.resource_management.resource_utils import locate_rvs_config_file
 
 
-_CONFIG = ResourceConfig.default()
+CONFIG_PATH = locate_rvs_config_file()
+if CONFIG_PATH is None:
+    _CONFIG = ResourceConfig.default()
+else:
+    _CONFIG = ResourceConfig.from_path(CONFIG_PATH)
+
+
+def is_abstract(cls: type, bases: tuple[type, ...]) -> bool:
+    if inspect.isabstract(cls):
+        return True
+
+    return ABC in bases
 
 
 class ResourceMeta(ABCMeta):
@@ -21,7 +36,7 @@ class ResourceMeta(ABCMeta):
 
         cls = super().__new__(mcs, name, bases, namespace)
 
-        if name != 'Resource':
+        if not is_abstract(cls, bases):
             if not (resource_name and version):
                 raise ValueError(f"Couldn't construct a resource class with class args: {resource_name=} ; {version=}")
 
@@ -42,12 +57,31 @@ class ResourceMeta(ABCMeta):
 
 
 class Resource(ABC, metaclass=ResourceMeta):
+    """
+    Abstract base class for resources.
+    This class should be inherited by all resource classes.
+
+    Example Usage:
+
+    ..  code-block:: python
+    class ExampleResource(Resource, resource_name='example', version='1.0'):
+    def __init__(self):
+        super().__init__()
+        self.example_file_path = self.local_path / 'example.txt'
+
+    def get_example_data(self) -> list[str]:
+        with open(self.stopwords_path, 'r') as f:
+            return f.read()
+
+    """
+
     def __init__(self):
         self.name = self._resource_name
         self.version = self._version
         self.local_path = self._local_path
         self.remote_relative_path = self._remote_relative_path
         self._loaded = False
+        self.load()
 
     def load(self) -> 'Resource':
         if self._loaded:
@@ -79,29 +113,3 @@ class Resource(ABC, metaclass=ResourceMeta):
         bytes_compressor = SnappyCompressor()
         compressor = FolderCompressor(bytes_compressor, mode='gz')
         return compressor
-
-
-# Example stopwords resource
-class StopwordsResource(Resource, resource_name='stopwords', version='2.0'):
-    def __init__(self):
-        super().__init__()
-        self.stopwords_path = self.local_path / 'stopwords.txt'
-
-    def get_data(self) -> list[str]:
-        with open(self.stopwords_path, 'r') as f:
-            return f.read().splitlines()
-
-    def get_stopwords(self) -> list[str]:
-        return self.get_data()
-
-
-if __name__ == '__main__':
-
-    stopwords_resource = StopwordsResource()
-    stopwords = stopwords_resource.load().get_stopwords()
-    print(stopwords)
-
-    stopwords_resource2 = StopwordsResource()
-    print(stopwords_resource == stopwords_resource2)
-
-    stopwords = stopwords_resource2.load()
