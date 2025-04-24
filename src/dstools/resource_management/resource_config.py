@@ -35,4 +35,3 @@ class ResourceConfig:
     @staticmethod
     def default() -> 'ResourceConfig':
         return ResourceConfig.from_path(_RVM_CONFIG_PATH)
-

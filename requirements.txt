@@ -6,3 +6,9 @@ Pillow~=11.1.0
 opencv-python~=4.10.0.84
 google-cloud-firestore~= 2.19.0
 google-cloud-storage==2.18.2
+typing_extensions~=4.12.2
+numpy~=1.26.0
+protobuf~=5.29.2
+python-snappy==0.7.3
+jserpy~=0.1.2
+setuptools~=69.5.1

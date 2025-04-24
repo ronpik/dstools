@@ -73,6 +73,10 @@ class ReportWriter:
         with open(self.filepath, 'w') as f:
             f.write(text)
 
+    def write_bytes(self, data: bytes) -> None:
+        with open(self.filepath, 'wb') as f:
+            f.write(data)
+
 
 def init_report(folder: Optional[Path] = None) -> None:
     """Initialize the global reporter."""

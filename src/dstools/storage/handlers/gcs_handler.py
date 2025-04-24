@@ -16,7 +16,7 @@ def get_src_root() -> Path:
 class GCSHandler(StorageHandler):
     def __init__(self, storage_config: dict[str, str]):
         self._bucket_name = storage_config["bucket"]
-        credentials_path = str(get_src_root() / storage_config["credentials_path"])
+        credentials_path = str(storage_config["credentials_path"])
         self._client = storage.Client.from_service_account_json(credentials_path)
         self._bucket = self._client.get_bucket(self._bucket_name)
 
