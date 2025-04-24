@@ -20,7 +20,7 @@ dependencies = [
     "Pillow>=11.1.0",
     "opencv-python>=4.10.0.84",
     "google-cloud-firestore>=2.19.0",
-    "snappy==0.7.3",
+    "python-snappy==0.7.3",
 ]
 
 [project.urls]
