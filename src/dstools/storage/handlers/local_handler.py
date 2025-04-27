@@ -7,7 +7,7 @@ from dstools.storage.handlers.storage_handler import StorageHandler
 class LocalStorageHandler(StorageHandler):
 
     def __init__(self, root_dir: Path):
-        self._root = root_dir
+        self._root = Path(root_dir)
 
     def download(self, remote_relative_path: str) -> bytes:
         return read_bytes(self._root / remote_relative_path)
